@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 from crewai_tools import tool
 from typing import Dict, Any
 from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsInput
-from ollama_utils import start_and_check_ollama
+from ollama_utils import start_and_check_ollama, install_ollama
 
 @tool
 def yf_fundamental_analysis(ticker: str):
