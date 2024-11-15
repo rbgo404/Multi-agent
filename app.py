@@ -153,9 +153,6 @@ def yahoo_news_tool(stock_symbol):
 
 class InferlessPythonModel:
     def initialize(self):
-        ollama_install_status = install_ollama()
-        if ollama_install_status:
-            print("INSTALL SUCCESSFUL",flush=True)
         ollama_status = start_and_check_ollama()
         if ollama_status:
           self.llm =LLM(model="ollama/hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L")
