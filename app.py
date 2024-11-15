@@ -4,7 +4,6 @@ from crewai_tools import SerperDevTool, ScrapeWebsiteTool, WebsiteSearchTool
 from dotenv import load_dotenv
 from llama_index.tools.yahoo_finance import YahooFinanceToolSpec
 from crewai_tools import LlamaIndexTool
-from langchain_ollama import ChatOllama
 import yfinance as yf
 import pandas as pd
 import numpy as np
