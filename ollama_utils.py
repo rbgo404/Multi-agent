@@ -63,7 +63,7 @@ def start_and_check_ollama():
     try:
         response = requests.get("http://localhost:11434/api/tags")
         models = json.loads(response.text)["models"]
-        model_info = next((m for m in models if m["name"] == "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q4_K_L"), None)
+        model_info = next((m for m in models if m["name"] == "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L"), None)
         if model_info:
             print("Ollama model is already downloaded!")
             wait_time = 200
@@ -76,7 +76,7 @@ def start_and_check_ollama():
 
     # Start the Ollama model
     print("Starting Ollama model...")
-    subprocess.run(["ollama", "run", "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q4_K_L",">", "/dev/null", "2>&1", "&"], check=True)
+    subprocess.run(["ollama", "run", "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L",">", "/dev/null", "2>&1", "&"], check=True)
 
     # Check if the Ollama model is running
     print("Checking if Ollama model is running...")
@@ -85,7 +85,7 @@ def start_and_check_ollama():
             response = requests.post(
                 "http://localhost:11434/api/generate",
                 json={
-                    "model": "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q4_K_L",
+                    "model": "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L",
                     "prompt": "What is the importance of AI?",
                     "options": {"num_predict": 1},
                     "stream": False
