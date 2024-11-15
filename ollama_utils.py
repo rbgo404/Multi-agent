@@ -76,7 +76,7 @@ def start_and_check_ollama():
 
     # Start the Ollama model
     print("Starting Ollama model...")
-    subprocess.Popen("ollama run llama3.1:8b > /dev/null 2>&1 &",shell=True)
+    subprocess.Popen("ollama run hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L > /dev/null 2>&1 &",shell=True)
 
     # Check if the Ollama model is running
     print("Checking if Ollama model is running...")
