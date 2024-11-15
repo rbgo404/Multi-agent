@@ -76,7 +76,7 @@ def start_and_check_ollama():
 
     # Start the Ollama model
     print("Starting Ollama model...")
-    subprocess.run(["ollama", "run", "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L",">", "/dev/null", "2>&1", "&"], check=True)
+    subprocess.Popen("ollama run llama3.1:8b > /dev/null 2>&1 &",shell=True)
 
     # Check if the Ollama model is running
     print("Checking if Ollama model is running...")
@@ -95,7 +95,8 @@ def start_and_check_ollama():
                 print("Ollama model is running!")
                 return True
         except requests.exceptions.RequestException:
-            time.sleep(3)
+            pass
+        time.sleep(3)
     else:
         print("Failed to start Ollama model")
         return False
