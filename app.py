@@ -12,6 +12,9 @@ from crewai_tools import tool
 from typing import Dict, Any
 from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsInput
 from ollama_utils import start_and_check_ollama
+import os
+os.environ["SERPER_API_KEY"]="6cf4bce6a41c57f5b3a04cc899973410aada096c"
+os.environ["OPENAI_API_KEY"] = "sk-proj-1111"
 
 @tool
 def yf_fundamental_analysis(ticker: str):
