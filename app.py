@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 from crewai_tools import tool
 from typing import Dict, Any
 from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsInput
-from ollama_utils import start_and_check_ollama, install_ollama
+from ollama_utils import start_and_check_ollama
 import os
 os.environ["SERPER_API_KEY"]="6cf4bce6a41c57f5b3a04cc899973410aada096c"
 os.environ["OPENAI_API_KEY"] = "sk-proj-1111"
@@ -155,7 +155,6 @@ def yahoo_news_tool(stock_symbol):
 
 class InferlessPythonModel:
     def initialize(self):
-        ollama_install_status = install_ollama()
         ollama_status = start_and_check_ollama()
         if ollama_status:
           self.llm =LLM(model="ollama/hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L")
