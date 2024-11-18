@@ -1,4 +1,4 @@
-from crewai import Agent, Task, Crew, Process
+from crewai import Agent, Task, Crew, Process, LLM
 from crewai_tools import SerperDevTool
 from llama_index.tools.yahoo_finance import YahooFinanceToolSpec
 from crewai_tools import LlamaIndexTool
