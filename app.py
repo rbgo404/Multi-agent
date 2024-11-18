@@ -12,9 +12,10 @@ os.environ["OPENAI_API_KEY"] = "sk-proj-1111"
 
 class InferlessPythonModel:
     def initialize(self):
-        ollama_status = start_and_check_ollama()
+        model_name = "hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L"
+        ollama_status = start_and_check_ollama(model_name)
         if ollama_status:
-          self.llm =LLM(model="ollama/hf.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q3_K_L")
+          self.llm =LLM(model=model_name)
           self.agent = self.create_agent(self.llm)
         
     def infer(self, inputs):
