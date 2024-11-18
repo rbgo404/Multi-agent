@@ -4,10 +4,6 @@ from llama_index.tools.yahoo_finance import YahooFinanceToolSpec
 from crewai_tools import LlamaIndexTool
 from ollama_utils import start_and_check_ollama
 from agent_tools import yf_fundamental_analysis, yahoo_news_tool
-import os
-
-os.environ["SERPER_API_KEY"]="6cf4bce6a41c57f5b3a04cc899973410aada096c"
-os.environ["OPENAI_API_KEY"] = "sk-proj-1111"
 
 
 class InferlessPythonModel:
