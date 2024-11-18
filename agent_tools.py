@@ -119,9 +119,8 @@ def yf_fundamental_analysis(ticker: str):
           analysis["Interpretations"] = interpretations
           
           return analysis
-
-    except Exception as e:
-        return f"An error occurred during the analysis: {str(e)}"
+     except Exception as e:
+          return f"An error occurred during the analysis: {str(e)}"
 
 @tool
 def yahoo_news_tool(stock_symbol):
