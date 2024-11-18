@@ -3,7 +3,7 @@ import requests
 import time
 import json
 import shutil
-import os
+
 
 def install_ollama():
     """
