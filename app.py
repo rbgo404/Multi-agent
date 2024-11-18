@@ -130,4 +130,4 @@ class InferlessPythonModel:
 
 
     def finalize(self):
-        pass
+        self.llm = None
