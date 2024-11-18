@@ -5,6 +5,15 @@ from crewai_tools import tool
 
 @tool
 def yf_fundamental_analysis(ticker: str):
+     """
+        Perform a comprehensive fundamental analysis on the given stock symbol.
+    
+        Args:
+            stock_symbol (str): The stock symbol to analyze.
+    
+        Returns:
+            dict: A dictionary with the detailed fundamental analysis results.
+    """
     try:
         stock = yf.Ticker(ticker)
         info = stock.info
